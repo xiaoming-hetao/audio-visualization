@@ -20,10 +20,10 @@ const Canvas = () => {
 
     // 设置音频节点，关联到 AudioContext 上，作为整个音频分析过程的输入
     const source = context.createMediaElementSource(audioElement.current); //通过<audio>节点创建音频源
-    setIsConnect(true);
 
     source.connect(analyser); //将音频源关联到分析器
     analyser.connect(context.destination); //把分析器关联到输出设备
+    setIsConnect(true);
 
     const canvas = canvasElement.current;
     canvas.width = window.innerWidth;
@@ -85,7 +85,6 @@ const Canvas = () => {
       <canvas ref={canvasElement} className={styles.canvas}></canvas>
       <audio
         ref={audioElement}
-        controls
         src="//m8.music.126.net/21180815163607/04976f67866d4b4d11575ab418904467/ymusic/515a/5508/520b/f0cf47930abbbb0562c9ea61707c4c0b.mp3?infoId=92001"
         crossOrigin="anonymous"
       ></audio>
